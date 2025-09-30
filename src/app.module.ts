@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { TasksModule } from './tasks/tasks.module';
 import key from './config/key';
 
 @Module({
-  imports: [MongooseModule.forRoot(key.mongoUri), ],
+  imports: [MongooseModule.forRoot(key.mongoUri), TasksModule, ],
   controllers: [AppController],
   providers: [AppService],
 })
