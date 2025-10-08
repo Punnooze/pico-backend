@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { Customer } from './interfaces/customer.interface';
 import { CustomerDto } from './dto/customer.dto';
@@ -36,5 +36,15 @@ export class CustomersController {
     @Param('id') id: string,
   ): Promise<Customer | null> {
     return this.customerService.removeBoardFromFavourites(boardId, id);
+  }
+
+  @Get('/find-customer-by-email/:email')
+  findCustomerByEmail(@Param('email') email: string): Promise<Customer | null> {
+    return this.customerService.findCustomerByEmail(email);
+  } 
+
+  @Delete(':id')
+  deleteCustomer(@Param('id') id: string) : Promise<Customer | null>{
+    return this.customerService.deleteCustomer(id);
   }
 }

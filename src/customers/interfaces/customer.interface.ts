@@ -2,6 +2,6 @@ export interface Customer {
   id?: string;
   name: string;
   email: string;
-  boards?: string[];
   favouriteBoards?: string[];
+  password: string;
 }

@@ -1,6 +1,6 @@
 export class CustomerDto {
-  readonly name: String;
-  readonly email: String;
-  readonly boards?: String[];
-  readonly favouriteBoards?: String[];
+  readonly name: string;
+  readonly email: string;
+  readonly password: string;
+  readonly favouriteBoards?: string[];
 }

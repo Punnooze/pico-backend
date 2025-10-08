@@ -5,10 +5,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { TasksModule } from './tasks/tasks.module';
 import { CustomersModule } from './customers/customers.module';
 import { BoardsModule } from './boards/boards.module';
+import { AuthModule } from './auth/auth.module';
 import key from './config/key';
 
 @Module({
-  imports: [MongooseModule.forRoot(key.mongoUri), TasksModule, CustomersModule, BoardsModule, ],
+  imports: [MongooseModule.forRoot(key.mongoUri), TasksModule, CustomersModule, BoardsModule, AuthModule, ],
   controllers: [AppController],
   providers: [AppService],
 })
